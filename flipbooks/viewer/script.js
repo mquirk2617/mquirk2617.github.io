@@ -1,5 +1,3 @@
-import { init as flipbook } from "../libs/flipbook-viewer.js";
-
 const params = new URLSearchParams(window.location.search);
 const book = params.get("book") || "driftwood-theatre";
 
@@ -20,7 +18,7 @@ async function load() {
     getPage: (n, cb) => {
       const img = new Image();
       img.src = pages[n - 1];
-      img.onload = () => cb(img);
+      img.onload = () => cb(null, img);
     }
   };
 
@@ -30,7 +28,7 @@ async function load() {
     height: 800
   };
 
-  flipbook(bookObj, "flipbook", opts, (err, viewer) => {
+  window.flipbook.init(bookObj, "flipbook", opts, (err, viewer) => {
 
     if (err) {
       console.error("Flipbook error:", err);
