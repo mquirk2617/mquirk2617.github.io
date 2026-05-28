@@ -1,3 +1,4 @@
+console.log("SCRIPT LOADED");
 const params = new URLSearchParams(window.location.search);
 const book = params.get("book") || "catalog";
 
