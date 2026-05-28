@@ -7,7 +7,7 @@ const totalPages = 33;
 const pages = [];
 
 for (let i = 1; i <= totalPages; i++) {
-  pages.push(`../books/${book}/pages/${i}.jpg`);
+  pages.push(`./books/${book}/pages/${i}.jpg`);
 }
 
 // Build book interface expected by library
