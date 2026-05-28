@@ -35,6 +35,8 @@ async function load() {
       console.error("Flipbook error:", err);
       return;
     }
+    document.getElementById("btn-prev").addEventListener("click", () => viewer.flip_back());
+    document.getElementById("btn-next").addEventListener("click", () => viewer.flip_forward());
 
     console.log("Viewer loaded:", viewer);
 
