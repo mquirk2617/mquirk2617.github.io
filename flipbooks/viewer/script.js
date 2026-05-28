@@ -19,7 +19,7 @@ async function load() {
       if (n === 0 || n > pages.length) return cb(null, null);
       const img = new Image();
       img.src = pages[n - 1];
-      img.onload = () => cb(null, img);
+      img.onload = () => cb(null, { img });
     }
   };
 
