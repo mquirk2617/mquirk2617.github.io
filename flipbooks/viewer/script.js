@@ -16,6 +16,7 @@ async function load() {
     numPages: () => pages.length,
 
     getPage: (n, cb) => {
+      if (n === 0 || n > pages.length) return cb(null, null);
       const img = new Image();
       img.src = pages[n - 1];
       img.onload = () => cb(null, img);
